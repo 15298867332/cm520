@@ -9,7 +9,7 @@
 # File name: diy-part1.sh
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 rm -rf /package/feeds/luci/luci-app-openclash
-
+echo 'src-git small8 https://github.com/kenzok8/small-package' >>feeds.conf.default
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
