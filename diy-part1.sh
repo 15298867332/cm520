@@ -11,11 +11,7 @@
 ####################################################################
 rm -rf package/feeds/luci/luci-app-openclash
 rm -rf feeds/packages/net/mosdns
-rm -rf feeds/packages/net/msd_lite
 rm -rf feeds/packages/net/smartdns
-rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/luci/applications/luci-app-netdata
 #########################################################################
 src-git small8 https://github.com/kenzok8/small-package
 ./scripts/feeds update -a && ./scripts/feeds install -a
