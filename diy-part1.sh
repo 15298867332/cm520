@@ -24,7 +24,7 @@ sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.
 # speedtest
 sed -i 's/PKG_BUILD_DEPENDS:=golang/host/PKG_BUILD_DEPENDS:=golang/host upx/host/g' package/feeds/small8/speedtest-web/Makefile
 # Modify default IP
-sed -i 's/192.168.1./192.168.2./g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.1./192.168.2./g' package/base-files/files/bin/config_generate
 # 修改本地时间格式
 sed -i 's/os.date()/os.date("%a %Y-%m-%d %H:%M:%S")/g' package/lean/autocore/files/*/index.htm
 # 修改版本为编译日期
