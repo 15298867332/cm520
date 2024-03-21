@@ -75,10 +75,11 @@ jobs:
 
     - name: Load custom feeds
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+       cd openwrt
+       ./scripts/feeds update -a && ./scripts/feeds install -a
+       rm -rf package/feeds/luci/luci-app-openclash
+       rm -fr feeds.conf.default
+       src-git small8 https://github.com/kenzok8/small-package
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
