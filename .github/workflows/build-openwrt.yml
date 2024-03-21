@@ -82,7 +82,8 @@ jobs:
     - name: Install feeds
       run: 
        cd openwrt && sed -i 's/src-git luci/#src-git luci/g' feeds.conf.default
-       ./scripts/feeds update -a && ./scripts/feeds install -a
+       ./scripts/feeds update -a 
+       ./scripts/feeds install -a
 
     - name: Load custom configuration
       run: |
