@@ -90,9 +90,9 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        cd openwrt ./scripts/feeds update -a && ./scripts/feeds install -a
+         mv feeds.conf.default  openwrt/feeds.conf.default
+         mv .config openwrt/.config
+         cd openwrt ./scripts/feeds update -a && ./scripts/feeds install -a
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
