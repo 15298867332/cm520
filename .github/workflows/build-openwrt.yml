@@ -77,13 +77,11 @@ jobs:
         ./scripts/feeds update -a && ./scripts/feeds install -a
 
     - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
+      run: cd openwrt && rm -rf package/feeds/luci/luci-app-openclash
 
     - name: Install feeds
       run: 
-       cd openwrt 
-       rm -rf package/feeds/luci/luci-app-openclash
-       sed -i 's/src-git luci/#src-git luci/g' feeds.conf.default
+       cd openwrt && sed -i 's/src-git luci/#src-git luci/g' feeds.conf.default
        ./scripts/feeds update -a && ./scripts/feeds install -a
 
     - name: Load custom configuration
