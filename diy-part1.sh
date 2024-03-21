@@ -9,7 +9,7 @@
 # File name: diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 ####################################################################
-rm -rf package/feeds/luci/luci-app-openclash
+#rm -rf package/feeds/luci/luci-app-openclash
 #rm -rf feeds/packages/net/mosdns
 #rm -rf feeds/packages/net/smartdns
 #########################################################################
