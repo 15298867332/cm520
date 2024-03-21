@@ -73,17 +73,15 @@ jobs:
     - name: Load custom feeds
       run: |
         cd openwrt
-        ./scripts/feeds update -a && ./scripts/feeds install -a
         echo "src-git small8 https://github.com/kenzok8/small-package" >> ./feeds.conf.default
         ./scripts/feeds update -a && ./scripts/feeds install -a
 
     - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
+      run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
 
     - name: Install feeds
       run: 
        cd openwrt 
-       ./scripts/feeds update -a && ./scripts/feeds install -a
        rm -rf package/feeds/luci/luci-app-openclash
        sed -i 's/src-git luci/#src-git luci/g' feeds.conf.default
        ./scripts/feeds update -a && ./scripts/feeds install -a
