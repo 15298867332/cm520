@@ -79,9 +79,9 @@ jobs:
        ./scripts/feeds update -a && ./scripts/feeds install -a
        rm -rf package/feeds/luci/luci-app-openclash
        rm -fr feeds.conf.default
-       src-git small8 https://github.com/kenzok8/small-package
-
+    
     - name: Update feeds
+       [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
