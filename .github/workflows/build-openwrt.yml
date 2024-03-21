@@ -82,12 +82,11 @@ jobs:
     - name: Install feeds
       run: 
        cd openwrt && sed -i 's/src-git luci/#src-git luci/g' feeds.conf.default
-       ./scripts/feeds update -a 
-       ./scripts/feeds install -a
-
+  
     - name: Load custom configuration
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
         
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
